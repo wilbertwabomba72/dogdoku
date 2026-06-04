@@ -4,214 +4,60 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dogdoku - Cute Puppy Logic Puzzles</title>
-  <meta name="description" content="Dogdoku is a cozy dog-themed logic puzzle game with cute puppy art, warm colors, star ratings, and relaxing levels.">
+  <meta name="description" content="Dogdoku is a cozy puppy logic puzzle game with warm art, simple rules, star ratings, and relaxing levels.">
   <style>
-    :root {
-      --ink: #4b2a15;
-      --muted: #7b604b;
-      --cream: #f8f1e5;
-      --card: rgba(255, 250, 239, 0.9);
-      --gold: #ffc84a;
-      --green: #8dcc64;
-      --blue: #8bd6e4;
-      --pink: #ff7d8d;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 20% 12%, rgba(255, 214, 128, 0.55), transparent 28%),
-        linear-gradient(180deg, #fff0c8 0%, var(--cream) 50%, #f6dfb9 100%);
-      min-height: 100vh;
-    }
-    .wrap {
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 44px 0;
-    }
-    header {
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 42px;
-      align-items: center;
-      min-height: 76vh;
-    }
-    .eyebrow {
-      display: inline-block;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.72);
-      border: 2px solid rgba(75, 42, 21, 0.12);
-      font-weight: 800;
-      color: var(--muted);
-    }
-    h1 {
-      margin: 18px 0 0;
-      font-size: clamp(58px, 10vw, 118px);
-      line-height: 0.9;
-      letter-spacing: 0;
-      color: #5a2f13;
-      text-shadow: 0 7px 0 rgba(255, 255, 255, 0.82);
-    }
-    .tagline {
-      margin: 24px 0 0;
-      font-size: clamp(22px, 4vw, 36px);
-      line-height: 1.18;
-      font-weight: 900;
-    }
-    .copy {
-      max-width: 640px;
-      margin-top: 20px;
-      color: var(--muted);
-      font-size: 19px;
-      line-height: 1.65;
-    }
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 26px;
-    }
-    .badge {
-      padding: 12px 16px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.76);
-      border: 2px solid rgba(75, 42, 21, 0.10);
-      font-weight: 800;
-    }
-    .phone {
-      width: min(420px, 86vw);
-      justify-self: center;
-      padding: 12px;
-      border-radius: 46px;
-      background: #2c211a;
-      box-shadow: 0 30px 90px rgba(75, 42, 21, 0.28);
-    }
-    .phone img {
-      display: block;
-      width: 100%;
-      border-radius: 34px;
-    }
-    section {
-      margin-top: 24px;
-      padding: 30px;
-      border-radius: 26px;
-      background: var(--card);
-      border: 2px solid rgba(75, 42, 21, 0.10);
-      box-shadow: 0 20px 52px rgba(75, 42, 21, 0.08);
-    }
-    h2 {
-      margin: 0 0 16px;
-      font-size: 34px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    .feature {
-      min-height: 150px;
-      padding: 22px;
-      border-radius: 20px;
-      background: #fffaf0;
-      border: 2px solid rgba(75, 42, 21, 0.08);
-    }
-    .feature strong {
-      display: block;
-      font-size: 21px;
-      margin-bottom: 8px;
-    }
-    .feature p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.55;
-    }
-    .screens {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-    .screens img {
-      width: 100%;
-      display: block;
-      border-radius: 18px;
-      box-shadow: 0 12px 34px rgba(75, 42, 21, 0.15);
-    }
-    footer {
-      padding: 30px 0 0;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    a {
-      color: #27758a;
-      font-weight: 800;
-      text-decoration: none;
-    }
-    @media (max-width: 840px) {
-      header { grid-template-columns: 1fr; }
-      .phone { order: -1; }
-      .grid, .screens { grid-template-columns: 1fr; }
-    }
+    :root { --ink:#4b2a15; --muted:#7b604b; --cream:#f8f1e5; --gold:#ffc84a; --green:#78c75b; --blue:#8bd6e4; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; color:var(--ink); background:linear-gradient(180deg,#fff0c8 0%,var(--cream) 56%,#f5d7a9 100%); }
+    .wrap { width:min(1080px,calc(100% - 32px)); margin:auto; padding:42px 0; }
+    header { min-height:74vh; display:grid; grid-template-columns:1fr 360px; gap:40px; align-items:center; }
+    h1 { margin:0; font-size:clamp(54px,10vw,112px); line-height:.9; color:#5a2f13; text-shadow:0 7px 0 rgba(255,255,255,.82); }
+    .tagline { margin:20px 0 0; font-size:clamp(22px,4vw,34px); font-weight:900; }
+    p { color:var(--muted); font-size:18px; line-height:1.65; }
+    .badge { display:inline-block; margin:8px 8px 0 0; padding:10px 14px; border-radius:999px; background:rgba(255,255,255,.74); border:1px solid rgba(75,42,21,.12); font-weight:800; }
+    .phone { border-radius:34px; overflow:hidden; box-shadow:0 24px 70px rgba(75,42,21,.24); background:#fff; }
+    .phone img { display:block; width:100%; }
+    section { margin-top:34px; padding:26px; border-radius:26px; background:rgba(255,250,239,.78); border:1px solid rgba(75,42,21,.12); }
+    h2 { margin:0 0 12px; font-size:30px; }
+    ul { margin:0; padding-left:20px; color:var(--muted); font-size:18px; line-height:1.7; }
+    a { color:#2e8ca0; font-weight:800; }
+    footer { padding:26px 0 6px; color:var(--muted); }
+    @media (max-width:800px) { header { grid-template-columns:1fr; } .phone { max-width:320px; margin:auto; } }
   </style>
 </head>
 <body>
   <main class="wrap">
     <header>
       <div>
-        <span class="eyebrow">Cozy puzzle game for puppy lovers</span>
         <h1>Dogdoku</h1>
-        <p class="tagline">Cute puppy logic puzzles with warm, relaxing levels.</p>
-        <p class="copy">Place adorable pups on colorful boards, follow simple logic rules, and complete each level with careful thinking. Dogdoku is easy to learn, cozy to play, and perfect for a quick puzzle break.</p>
-        <div class="badges">
-          <span class="badge">Puppy puzzles</span>
-          <span class="badge">Logic rules</span>
-          <span class="badge">Star ratings</span>
-          <span class="badge">Cozy art</span>
-        </div>
+        <div class="tagline">Cute puppy logic puzzles</div>
+        <p>Dogdoku is a warm and cozy puzzle game where adorable puppies meet satisfying logic. Place pups carefully, follow simple rules, complete levels, and earn stars.</p>
+        <span class="badge">Puppy Theme</span>
+        <span class="badge">Logic Puzzle</span>
+        <span class="badge">Cozy Casual</span>
       </div>
-      <div class="phone">
-        <img src="store/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-06-04%20at%2014.54.22.png" alt="Dogdoku main menu screenshot">
-      </div>
+      <div class="phone"><img src="store/IMG_0329.PNG" alt="Dogdoku game screenshot"></div>
     </header>
-
     <section>
-      <h2>How to Play</h2>
-      <div class="grid">
-        <div class="feature">
-          <strong>Place the pups</strong>
-          <p>Tap the board to place a dog in the right spot and solve each level step by step.</p>
-        </div>
-        <div class="feature">
-          <strong>Follow the rules</strong>
-          <p>Use logic: one dog per color area, no duplicate row or column, and no touching pups.</p>
-        </div>
-        <div class="feature">
-          <strong>Earn stars</strong>
-          <p>Complete levels, unlock new boards, and improve your star ratings as puzzles get harder.</p>
-        </div>
-      </div>
+      <h2>How It Plays</h2>
+      <p>Put one puppy in each color area, avoid placing puppies in the same row or column, and make sure puppies do not touch. The rules are easy to learn, while each new level brings a fresh challenge.</p>
     </section>
-
     <section>
-      <h2>App Store Screenshots</h2>
-      <div class="screens">
-        <img src="store/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-06-04%20at%2014.54.22.png" alt="Dogdoku screenshot 1">
-        <img src="store/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-06-04%20at%2014.54.42.png" alt="Dogdoku screenshot 2">
-        <img src="store/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-06-04%20at%2014.55.04.png" alt="Dogdoku screenshot 3">
-        <img src="store/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-06-04%20at%2014.55.16.png" alt="Dogdoku screenshot 4">
-      </div>
+      <h2>Features</h2>
+      <ul>
+        <li>Cozy puppy-themed logic puzzle gameplay</li>
+        <li>Warm illustrated mobile UI</li>
+        <li>30 levels with locked, playable, and completed states</li>
+        <li>Star ratings and saved progress</li>
+        <li>Music, sound, and vibration settings</li>
+      </ul>
     </section>
-
-    <footer>
-      <span>Copyright 2026 Dogdoku. All rights reserved.</span>
-      <span>Developer Email: <a href="mailto:376551193@qq.com">376551193@qq.com</a></span>
-      <span><a href="privacy.html">Privacy Policy</a></span>
-    </footer>
+    <section>
+      <h2>Contact</h2>
+      <p>Developer email: <a href="mailto:376551193@qq.com">376551193@qq.com</a></p>
+      <p><a href="privacy.html">Privacy Policy</a></p>
+    </section>
+    <footer>© 2026 Dogdoku. All rights reserved.</footer>
   </main>
 </body>
 </html>
